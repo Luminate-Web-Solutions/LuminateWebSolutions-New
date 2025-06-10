@@ -15,6 +15,8 @@ import { ConsultationComponent } from './consultation/consultation.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CaseStudiesComponent } from './case-studies/case-studies.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
