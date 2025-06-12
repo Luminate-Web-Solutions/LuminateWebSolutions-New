@@ -18,12 +18,12 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CaseStudiesComponent } from './case-studies/case-studies.component';
-import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
-import { DisclaimerComponent } from './disclaimer/disclaimer.component';
-import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
-import { CancellationPolicyComponent } from './cancellation-policy/cancellation-policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PrivacyPolicyComponent } from './footer/privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './footer/terms-conditions/terms-conditions.component';
+import { DisclaimerComponent } from './footer/disclaimer/disclaimer.component';
+import { RefundPolicyComponent } from './footer/refund-policy/refund-policy.component';
+import { CancellationPolicyComponent } from './footer/cancellation-policy/cancellation-policy.component';
 
 
 @NgModule({
@@ -40,12 +40,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConsultationComponent,
     ProjectsComponent,
     CaseStudiesComponent,
+    CareerComponent,
     PrivacyPolicyComponent,
     TermsConditionsComponent,
     DisclaimerComponent,
     RefundPolicyComponent,
     CancellationPolicyComponent,
-    CareerComponent,
   
   ],
   imports: [
