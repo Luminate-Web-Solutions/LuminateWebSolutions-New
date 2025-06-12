@@ -3,7 +3,13 @@
     <img src="logo.png" alt="Luminate Logo" class="logo" />
     <ul class="nav-links">
       <li><a routerLink="">HOME</a></li>
-      <li><a routerLink="/about-us">ABOUT US</a></li>
+      <li class="dropdown">
+        <a routerLink="/about-us" class="dropdown-toggle">ABOUT US</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/about-us">About Us</a></li>
+          <li><a routerLink="/projects">Our Projects</a></li>
+        </ul>
+      </li>
       <li><a routerLink="/solutions">SOLUTIONS</a></li>
       <li><a routerLink="/career">CAREER</a></li>
       <li><a routerLink="/blogs">BLOGS</a></li>

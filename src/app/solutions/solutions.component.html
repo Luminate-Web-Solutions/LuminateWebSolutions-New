@@ -5,3 +5,279 @@
     <p class="hero-subtitle">See how our solutions grow your business. </p>
   </div>
 </div>
+
+<div class="services-page">
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="main-title">SERVICES</h1>
+      <p class="subtitle">See how our solutions grow your business.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-navigation">
+      <button 
+        class="tab-button"
+        [class.active]="activeTab === 'development'"
+        (click)="setActiveTab('development')">
+        DEVELOPMENT
+      </button>
+      <button 
+        class="tab-button"
+        [class.active]="activeTab === 'marketing'"
+        (click)="setActiveTab('marketing')">
+        DIGITAL MARKETING
+      </button>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid" *ngIf="activeTab === 'development'">
+      
+      <!-- ERP Software Development -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">ERP</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">ERP SOFTWARE DEVELOPMENT</h3>
+          <p class="service-description">
+            ERP software connects inventory, finances, HR, and operations, boosting efficiency. Custom-built for any business, it streamlines operations and enhances productivity.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Customer Relationship Management -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">CRM</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">CUSTOMER RELATIONSHIP MANAGEMENT</h3>
+          <p class="service-description">
+            ERP software connects inventory, finances, HR, and operations. Custom-built for any business, it streamlines operations to simplify operations.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Social Media Branding -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">SMB</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">SOCIAL MEDIA BRANDING</h3>
+          <p class="service-description">
+            Social media branding crafts your online identity with consistent visuals and voice. Builds your audience and boosts engagement across platforms.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- WhatsApp Marketing -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">WAM</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">WHAT'S APP MARKETING</h3>
+          <p class="service-description">
+            A fast, direct way to connect with customers through messages, updates, offers, and support right on their phones.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Custom App Development -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">AD</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">CUSTOM APP DEVELOPMENT</h3>
+          <p class="service-description">
+            We build custom, user-friendly mobile apps that help your customers connect with your brand and all in one seamless experience.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Website/App Maintenance -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">WEB</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">WEBSITE / APP MAINTENANCE</h3>
+          <p class="service-description">
+            Keep your website and apps running smoothly with regular updates, security checks, and performance optimization.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Digital Marketing Services (Hidden by default) -->
+    <div class="services-grid" *ngIf="activeTab === 'marketing'">
+      
+      <!-- SEO Services -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">SEO</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">SEARCH ENGINE OPTIMIZATION</h3>
+          <p class="service-description">
+            Boost your website's visibility on search engines with our comprehensive SEO strategies and techniques.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PPC Advertising -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">PPC</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">PAY-PER-CLICK ADVERTISING</h3>
+          <p class="service-description">
+            Drive targeted traffic to your website with strategic PPC campaigns across Google Ads and social platforms.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Content Marketing -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">CM</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">CONTENT MARKETING</h3>
+          <p class="service-description">
+            Create engaging, valuable content that attracts and retains customers while building brand authority.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Email Marketing -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">EM</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">EMAIL MARKETING</h3>
+          <p class="service-description">
+            Build relationships and drive conversions with personalized email campaigns and automated workflows.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Social Media Management -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">SM</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">SOCIAL MEDIA MANAGEMENT</h3>
+          <p class="service-description">
+            Manage your social media presence with strategic content planning, posting, and community engagement.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Analytics & Reporting -->
+      <div class="service-card">
+        <div class="service-image">
+          <div class="laptop">
+            <div class="screen">
+              <span class="ad-text">AR</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-title">ANALYTICS & REPORTING</h3>
+          <p class="service-description">
+            Track and analyze your digital marketing performance with comprehensive reporting and insights.
+          </p>
+          <button class="read-more-btn">
+            READ MORE <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
