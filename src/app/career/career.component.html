@@ -1,1 +1,107 @@
-<p>career works!</p>
+<div class="career-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Career</h1>
+    <p class="hero-subtitle">Your dream career starts here.</p>
+    
+    <div class="search-container">
+      <!-- Profession Dropdown -->
+      <div class="dropdown-container">
+        <button class="dropdown-button" (click)="toggleDropdown()">
+          <span>{{ selectedProfession }}</span>
+          <svg class="dropdown-arrow" [class.rotated]="isDropdownOpen" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <div class="dropdown-menu" [class.show]="isDropdownOpen">
+          <button 
+            *ngFor="let profession of professions" 
+            class="dropdown-item"
+            [class.selected]="profession === selectedProfession"
+            (click)="onProfessionSelect(profession)">
+            {{ profession }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-input-container">
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Search jobs, locations, keywords..."
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+          (keyup.enter)="onSearch()">
+        
+        <button class="search-button" (click)="onSearch()">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19 19L13 13L19 19ZM15 8C15 11.866 11.866 15 8 15C4.134 15 1 11.866 1 8C1 4.134 4.134 1 8 1C11.866 1 15 4.134 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Clear Filters Button -->
+    <button class="clear-filters" (click)="clearSearch()" *ngIf="searchTerm || selectedProfession !== 'All Professions'">
+      Clear Filters
+    </button>
+  </div>
+</div>
+
+<!-- Job Results Section -->
+<div class="jobs-section">
+  <div class="container">
+    <div class="results-header">
+      <h2>Available Positions</h2>
+      <p class="results-count">{{ filteredJobs.length }} job{{ filteredJobs.length !== 1 ? 's' : '' }} found</p>
+    </div>
+
+    <div class="jobs-grid" *ngIf="filteredJobs.length > 0">
+      <div class="job-card" *ngFor="let job of filteredJobs">
+        <div class="job-header">
+          <h3 class="job-title">{{ job.title }}</h3>
+          <span class="job-type">{{ job.type }}</span>
+        </div>
+        
+        <div class="job-meta">
+          <span class="job-profession">{{ job.profession }}</span>
+          <span class="job-location">{{ job.location }}</span>
+        </div>
+        
+        <p class="job-description">{{ job.description }}</p>
+        
+        <div class="job-requirements">
+          <span class="requirement-tag" *ngFor="let req of job.requirements.slice(0, 4)">
+            {{ req }}
+          </span>
+        </div>
+        
+        <div class="job-footer">
+          <span class="job-posted">Posted {{ job.posted | date:'MMM d, y' }}</span>
+          <button class="apply-button" (click)="applyForJob(job.id)">
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div class="no-results" *ngIf="filteredJobs.length === 0">
+      <div class="no-results-content">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21L16.65 16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+        <h3>No jobs found</h3>
+        <p>Try adjusting your search criteria or browse all available positions.</p>
+        <button class="clear-filters" (click)="clearSearch()">
+          View All Jobs
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

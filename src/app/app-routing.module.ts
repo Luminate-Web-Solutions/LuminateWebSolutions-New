@@ -11,7 +11,11 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CaseStudiesComponent } from './case-studies/case-studies.component';
-
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
+import { CancellationPolicyComponent } from './cancellation-policy/cancellation-policy.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +28,12 @@ const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'consultation', component: ConsultationComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'case-studies', component: CaseStudiesComponent }
+  { path: 'case-studies', component: CaseStudiesComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-conditions', component: TermsConditionsComponent },
+  { path: 'disclaimer', component: DisclaimerComponent },
+  { path: 'refund-policy', component: RefundPolicyComponent },
+  { path: 'cancellation-policy', component: CancellationPolicyComponent },
 ];
 
 @NgModule({

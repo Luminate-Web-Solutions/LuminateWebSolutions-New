@@ -1,1 +1,150 @@
-<p>consultation works!</p>
+<div class="consultation-page">
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="main-title">Get Free Consultation</h1>
+      <p class="subtitle">We offer affordable best quality services</p>
+    </div>
+
+    <!-- Consultation Form -->
+    <div class="form-container">
+      <form [formGroup]="consultationForm" (ngSubmit)="onSubmit()" class="consultation-form">
+        
+        <!-- Project/Company Name -->
+        <div class="form-group full-width">
+          <label for="projectName">Project/Company Name</label>
+          <input 
+            type="text" 
+            id="projectName"
+            formControlName="projectName"
+            class="form-input">
+        </div>
+
+        <!-- Full Name -->
+        <div class="form-group full-width">
+          <label for="fullName">Full Name</label>
+          <input 
+            type="text" 
+            id="fullName"
+            formControlName="fullName"
+            class="form-input">
+        </div>
+
+        <!-- Email and Contact Number -->
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email"
+              formControlName="email"
+              class="form-input">
+          </div>
+          <div class="form-group half-width">
+            <label for="contactNumber">Contact Number</label>
+            <input 
+              type="tel" 
+              id="contactNumber"
+              formControlName="contactNumber"
+              class="form-input">
+          </div>
+        </div>
+
+        <!-- Website Focus -->
+        <div class="form-group full-width">
+          <label for="websiteFocus">What will be the focus of the website ?</label>
+          <input 
+            type="text" 
+            id="websiteFocus"
+            formControlName="websiteFocus"
+            placeholder="Business, News, E-Commerce, etc..."
+            class="form-input">
+        </div>
+
+        <!-- Website Details -->
+        <div class="form-group full-width">
+          <label for="websiteDetails">Website Details</label>
+          <textarea 
+            id="websiteDetails"
+            formControlName="websiteDetails"
+            placeholder="Provide us with requirements for your website using the details..."
+            rows="6"
+            class="form-textarea"></textarea>
+        </div>
+
+        <!-- Additional Features -->
+        <div class="form-group full-width">
+          <label for="additionalFeatures">Additional Features</label>
+          <input 
+            type="text" 
+            id="additionalFeatures"
+            formControlName="additionalFeatures"
+            placeholder="SEO, SEM, Facebook Marketing, etc..."
+            class="form-input">
+        </div>
+
+        <!-- Number of Pages and References -->
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="numberOfPages">Number Of Pages</label>
+            <select 
+              id="numberOfPages"
+              formControlName="numberOfPages"
+              class="form-select">
+              <option value="1-10">1-10</option>
+              <option value="11-20">11-20</option>
+              <option value="21-50">21-50</option>
+              <option value="51-100">51-100</option>
+              <option value="100+">100+</option>
+            </select>
+          </div>
+          <div class="form-group half-width">
+            <label for="references">References</label>
+            <input 
+              type="text" 
+              id="references"
+              formControlName="references"
+              class="form-input">
+          </div>
+        </div>
+
+        <!-- Objective -->
+        <div class="form-group full-width">
+          <label for="objective">Objective</label>
+          <input 
+            type="text" 
+            id="objective"
+            formControlName="objective"
+            class="form-input">
+        </div>
+
+        <!-- Budget -->
+        <div class="form-group full-width">
+          <label for="budget">What is the budget for your website ?</label>
+          <input 
+            type="text" 
+            id="budget"
+            formControlName="budget"
+            class="form-input">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-container">
+          <button 
+            type="submit" 
+            class="submit-button"
+            [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Success Message -->
+      <div *ngIf="showSuccessMessage" class="success-message">
+        <h3>Thank you for your consultation request!</h3>
+        <p>We will get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>

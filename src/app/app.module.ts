@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +18,12 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CaseStudiesComponent } from './case-studies/case-studies.component';
-
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
+import { CancellationPolicyComponent } from './cancellation-policy/cancellation-policy.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,11 +39,21 @@ import { CaseStudiesComponent } from './case-studies/case-studies.component';
     BlogsComponent,
     ConsultationComponent,
     ProjectsComponent,
-    CaseStudiesComponent
+    CaseStudiesComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent,
+    DisclaimerComponent,
+    RefundPolicyComponent,
+    CancellationPolicyComponent,
+    CareerComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

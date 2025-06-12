@@ -1,1 +1,55 @@
-<p>home works!</p>
+<div class="hero-slider">
+  <div class="slider-container">
+    <div class="slide" 
+         *ngFor="let slide of slides; let i = index"
+         [class.active]="i === currentSlide"
+         [style.background-image]="'url(' + slide.backgroundImage + ')'">
+      
+      <div class="slide-overlay"></div>
+      
+      <div class="slide-content">
+        <div class="content-box">
+          <h1 class="slide-title">{{ slide.title }}</h1>
+          <h2 class="slide-subtitle">{{ slide.subtitle }}</h2>
+          
+          <div class="button-group">
+            <button class="btn btn-primary" (click)="onPrimaryButtonClick()">
+              {{ slide.primaryButtonText }}
+            </button>
+            <button class="btn btn-secondary" (click)="onSecondaryButtonClick()">
+              {{ slide.secondaryButtonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow nav-arrow-left" 
+            (click)="prevSlide()" 
+            (mouseenter)="stopAutoSlide()" 
+            (mouseleave)="startAutoSlide()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <button class="nav-arrow nav-arrow-right" 
+            (click)="nextSlide()" 
+            (mouseenter)="stopAutoSlide()" 
+            (mouseleave)="startAutoSlide()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <!-- Dots Indicator -->
+    <div class="dots-container">
+      <button class="dot" 
+              *ngFor="let slide of slides; let i = index"
+              [class.active]="i === currentSlide"
+              (click)="goToSlide(i)">
+      </button>
+    </div>
+  </div>
+</div>

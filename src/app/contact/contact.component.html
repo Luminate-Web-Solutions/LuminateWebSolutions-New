@@ -1,1 +1,99 @@
-<p>contact works!</p>
+<div class="contact-page">
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <h1 class="main-title">Contact <span class="blue-text">US</span></h1>
+      <p class="subtitle">Get in touch with us for your web development and digital marketing needs</p>
+      
+      <div class="illustration">
+        <!-- Chat bubble -->
+        <div class="chat-bubble">
+          <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        
+        <div class="contact-image">
+            <img src="contact-us.png" alt="">
+        </div>
+        
+        <!-- Floating icons -->
+        <div class="phone-icon">📞</div>
+        <div class="email-icon">📧</div>
+        <div class="clock-icon">🕐</div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="form-card">
+        <h2 class="form-title">Let's Connect</h2>
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <span>Hyderabad, Telangana, India</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">📞</span>
+            <span>+91 730 736 7455</span>
+          </div>
+          <div class="info-item">
+            <span class="icon">✉️</span>
+            <span>infoluminoustech.com</span>
+          </div>
+        </div>
+
+        <!-- Business Hours -->
+        <div class="business-hours">
+          <div class="hours-header">Business Hours</div>
+          <div class="hours-text">Monday - Saturday:</div>
+          <div class="hours-time">9:00 AM - 6:00 PM</div>
+          <div class="hours-text">Sunday: Closed</div>
+        </div>
+
+        <!-- Contact Form -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <input 
+            type="text" 
+            formControlName="name"
+            placeholder="Joe Doe"
+            class="form-input">
+          
+          <input 
+            type="email" 
+            formControlName="email"
+            placeholder="example@gmail.com"
+            class="form-input">
+          
+          <input 
+            type="tel" 
+            formControlName="phone"
+            placeholder="+91 0000 0000"
+            class="form-input">
+          
+          <textarea 
+            formControlName="message"
+            placeholder="Message....."
+            rows="4"
+            class="form-textarea"></textarea>
+
+          <button 
+            type="submit" 
+            class="submit-button"
+            [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
+        </form>
+
+        <div *ngIf="showSuccessMessage" class="success-message">
+          Message sent successfully!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

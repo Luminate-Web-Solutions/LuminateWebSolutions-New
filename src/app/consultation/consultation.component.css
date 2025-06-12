@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.consultation-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #2c5aa0;
+  font-weight: 500;
+}
+
+/* Form Container */
+.form-container {
+  background: #e8f2ff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1e7dd;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  flex: 1;
+}
+
+/* Labels */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Form Inputs */
+.form-input, .form-textarea, .form-select {
+  padding: 12px 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  color: #2d3748;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  appearance: none;
+}
+
+/* Placeholders */
+.form-input::placeholder, .form-textarea::placeholder {
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Submit Button */
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background: #2c5aa0;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #1e4080;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+}
+
+.submit-button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success Message */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+  margin-top: 20px;
+}
+
+.success-message h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.success-message p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Validation Styles */
+.form-input.ng-invalid.ng-touched,
+.form-textarea.ng-invalid.ng-touched,
+.form-select.ng-invalid.ng-touched {
+  border-color: #e53e3e;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .consultation-page {
+    padding: 20px 15px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .form-container {
+    padding: 25px 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .half-width {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-container {
+    padding: 20px 15px;
+  }
+  
+  .submit-button {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+}
