@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 interface Slide {
   id: number;
@@ -13,9 +14,33 @@ interface Slide {
   selector: 'app-home',
   standalone: false,
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    trigger('slideIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(30px)' }),
+        animate('400ms ease', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+    trigger('expandCollapse', [
+      transition(':enter', [
+        style({ height: 0, opacity: 0 }),
+        animate('300ms ease', style({ height: '*', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease', style({ height: 0, opacity: 0 }))
+      ])
+    ]),
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms 200ms ease', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  // Slider logic
   currentSlide = 0;
   autoSlideInterval: any;
 
@@ -45,6 +70,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       backgroundImage: 'sliderrr.png'
     }
   ];
+
+  // Services section logic
+  activeTab: string = 'development';
+  expandedService: string | null = null;
 
   ngOnInit() {
     this.startAutoSlide();
@@ -84,5 +113,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onSecondaryButtonClick() {
     console.log('Secondary button clicked:', this.slides[this.currentSlide].secondaryButtonText);
+  }
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+    this.expandedService = null;
+  }
+
+  toggleService(service: string) {
+    this.expandedService = this.expandedService === service ? null : service;
+  }
+
+  onGetStarted() {
+    alert('Get Started clicked!');
   }
 }

@@ -1,0 +1,102 @@
+<section class="blogs">
+  <div class="container">
+    <h2 class="section-title">BLOGS</h2>
+    <p class="section-subtitle">See how we've delivered best results to our clients</p>
+
+    <div class="blog-cards">
+      <div class="blog-card" 
+           (mouseenter)="onCardHover(0)" 
+           (mouseleave)="onCardLeave(0)"
+           [class.hovered]="hoveredCard === 0">
+        <div class="blog-background">
+          <div class="color-overlay"></div>
+          <div class="image-overlay" 
+               [style.background-image]="'url(' + blogPosts[0].image + ')'">
+          </div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-category">{{ blogPosts[0].category }}</div>
+          <h3>{{ blogPosts[0].title }}</h3>
+          <p class="blog-excerpt">{{ blogPosts[0].excerpt }}</p>
+          <div class="blog-meta">
+            <span class="blog-date">{{ blogPosts[0].date }}</span>
+            <span class="blog-author">{{ blogPosts[0].author }}</span>
+          </div>
+          <button class="read-more-btn">
+            READ MORE 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12,5 19,12 12,19"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="blog-card" 
+           (mouseenter)="onCardHover(1)" 
+           (mouseleave)="onCardLeave(1)"
+           [class.hovered]="hoveredCard === 1">
+        <div class="blog-background">
+          <div class="color-overlay gradient-1"></div>
+          <div class="image-overlay" 
+               [style.background-image]="'url(' + blogPosts[1].image + ')'">
+          </div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-category">{{ blogPosts[1].category }}</div>
+          <h3>{{ blogPosts[1].title }}</h3>
+          <p class="blog-excerpt">{{ blogPosts[1].excerpt }}</p>
+          <div class="blog-meta">
+            <span class="blog-date">{{ blogPosts[1].date }}</span>
+            <span class="blog-author">{{ blogPosts[1].author }}</span>
+          </div>
+          <button class="read-more-btn">
+            READ MORE 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12,5 19,12 12,19"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="blog-card" 
+           (mouseenter)="onCardHover(2)" 
+           (mouseleave)="onCardLeave(2)"
+           [class.hovered]="hoveredCard === 2">
+        <div class="blog-background">
+          <div class="color-overlay gradient-1"></div>
+          <div class="image-overlay" 
+               [style.background-image]="'url(' + blogPosts[2].image + ')'">
+          </div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-category">{{ blogPosts[2].category }}</div>
+          <h3>{{ blogPosts[2].title }}</h3>
+          <p class="blog-excerpt">{{ blogPosts[2].excerpt }}</p>
+          <div class="blog-meta">
+            <span class="blog-date">{{ blogPosts[2].date }}</span>
+            <span class="blog-author">{{ blogPosts[2].author }}</span>
+          </div>
+          <button class="read-more-btn">
+            READ MORE 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12,5 19,12 12,19"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="blogs-navigation">
+      <button routerLink="/blogs" class="view-all-btn">
+        VIEW ALL BLOGS
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12,5 19,12 12,19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

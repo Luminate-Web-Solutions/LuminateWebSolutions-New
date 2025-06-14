@@ -24,6 +24,11 @@ import { TermsConditionsComponent } from './footer/terms-conditions/terms-condit
 import { DisclaimerComponent } from './footer/disclaimer/disclaimer.component';
 import { RefundPolicyComponent } from './footer/refund-policy/refund-policy.component';
 import { CancellationPolicyComponent } from './footer/cancellation-policy/cancellation-policy.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogService } from './services/blog.service';
+import { Blog } from './models/blog.model';
+import { BlogsSectionComponent } from './blogs-section/blogs-section.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 
 @NgModule({
@@ -46,6 +51,9 @@ import { CancellationPolicyComponent } from './footer/cancellation-policy/cancel
     DisclaimerComponent,
     RefundPolicyComponent,
     CancellationPolicyComponent,
+    BlogDetailComponent,
+    BlogsSectionComponent,
+    ProjectDetailComponent,
   
   ],
   imports: [

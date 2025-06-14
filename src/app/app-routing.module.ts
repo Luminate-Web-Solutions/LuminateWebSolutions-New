@@ -16,6 +16,8 @@ import { TermsConditionsComponent } from './footer/terms-conditions/terms-condit
 import { DisclaimerComponent } from './footer/disclaimer/disclaimer.component';
 import { RefundPolicyComponent } from './footer/refund-policy/refund-policy.component';
 import { CancellationPolicyComponent } from './footer/cancellation-policy/cancellation-policy.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,14 +28,17 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'career', component: CareerComponent },
   { path: 'blogs', component: BlogsComponent },
+  { path: 'blog/:id', component: BlogDetailComponent },
   { path: 'consultation', component: ConsultationComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: "projects", component: ProjectsComponent },
+  { path: "project-detail/:id", component: ProjectDetailComponent },
   { path: 'case-studies', component: CaseStudiesComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-conditions', component: TermsConditionsComponent },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
   { path: 'cancellation-policy', component: CancellationPolicyComponent },
+
 ];
 
 @NgModule({

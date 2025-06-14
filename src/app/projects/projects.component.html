@@ -9,198 +9,246 @@
 <div class="projects-page">
   <div class="container">
     
+    <!-- Projects Stats -->
+    <div class="projects-stats">
+      <div class="stat-item">
+        <div class="stat-number">{{ allProjects.length }}+</div>
+        <div class="stat-label">Completed Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Available</div>
+      </div>
+    </div>
+
     <!-- Projects Grid -->
     <div class="projects-grid">
       
-      <!-- SD HUB QUTUBSHAHI -->
-      <div class="project-card">
-        <div class="project-logo">
-          <div class="logo-container">
-            <div class="logo">
-              <img src="sdhub-qs.jpg" alt="">
-            </div>
-            <div class="tagline">SKILL DEVELOPMENT HUB</div>
-            <div class="icon-row">
-              <div class="icon-circle">
-                <i class="icon">👤</i>
-              </div>
-              <div class="icon-circle">
-                <i class="icon">📞</i>
-              </div>
-              <div class="icon-circle">
-                <i class="icon">⚙️</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-content">
-          <h3 class="project-title">SD HUB QUTUBSHAHI</h3>
-          <p class="project-description">
-            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
-          </p>
-          <button class="visit-button">Visit Website</button>
-        </div>
-      </div>
-
       <!-- ASEEM INDIA -->
-      <div class="project-card">
+      <div class="project-card" (click)="viewProjectDetails('aseem-india')">
         <div class="project-logo">
           <div class="logo">
-            <img src="Aseem-logo.png" alt="">
+            <img src="Aseem-logo.png" alt="ASEEM India">
           </div>
         </div>
         
         <div class="project-content">
           <h3 class="project-title">ASEEM INDIA</h3>
+          <p class="project-category">Non-Profit Organization</p>
           <p class="project-description">
-            We built a dynamic platform for ASEEM India that showcases their advocacy work and community initiatives. The site includes a resource library, donation portal, and volunteer management.
+            A comprehensive digital platform for advocacy, legal interventions, and empowerment of marginalized communities with donation management and community programs.
           </p>
-          <button class="visit-button">Visit Website</button>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('aseem-india'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- LAGOM INTERIO -->
-      <div class="project-card">
+      <!-- XLNC CONTRACTING -->
+      <div class="project-card" (click)="viewProjectDetails('xlnc-contracting')">
         <div class="project-logo">
           <div class="logo">
-            <div class="lagom-icon">
-                <img src="Lagom-logo.jpg" alt="">
-            </div>
+            <img src="xlnc-logo.png" alt="XLNC Technical Services">
           </div>
         </div>
         
         <div class="project-content">
-          <h3 class="project-title">LAGOM INTERIO</h3>
+          <h3 class="project-title">XLNC TECHNICAL SERVICES</h3>
+          <p class="project-category">Construction & Contracting</p>
           <p class="project-description">
-            For Lagom Interio, We Built An Elegant Full-Width Interior Design Portfolio With High-Resolution Imagery And Project Details. The Site Features A Clean, Modern Design Perfect For Consultation Requests.
+            Professional website showcasing construction and contracting expertise with modern design, project galleries, and comprehensive service portfolios.
           </p>
-          <button class="visit-button">Visit Website</button>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('xlnc-contracting'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- SD HUB Mehdipatnam -->
-      <div class="project-card">
+      <!-- SPEEDHOUSE DESIGN -->
+      <div class="project-card" (click)="viewProjectDetails('speedhouse-design')">
         <div class="project-logo">
           <div class="logo">
-            <img src="sdhub-mp.jpg" alt="">
-            <div class="partner-logos">
-              <div class="partner-badge">AICTE</div>
-              <div class="partner-badge">ISO</div>
-              <div class="partner-badge">MSME</div>
-              <div class="partner-badge">STARTUP</div>
-            </div>
+            <img src="speed-logo.png" alt="Speedhouse Design">
           </div>
         </div>
         
         <div class="project-content">
-          <h3 class="project-title">SD HUB Mehdipatnam</h3>
+          <h3 class="project-title">SPEEDHOUSE DESIGN</h3>
+          <p class="project-category">Design & Architecture</p>
           <p class="project-description">
-            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
+            Cutting-edge portfolio website showcasing innovative architectural and interior design projects with emphasis on speed and efficiency in design delivery.
           </p>
-          <button class="visit-button">Visit Website</button>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('speedhouse-design'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SD HUB QUTUBSHAHI -->
+      <div class="project-card" (click)="viewProjectDetails('sdhub-qutubshahi')">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="sdhub-qs.jpg" alt="SD HUB Qutubshahi">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">SD HUB QUTUBSHAHI</h3>
+          <p class="project-category">Educational Platform</p>
+          <p class="project-description">
+            Comprehensive skill development platform providing online courses, certification programs, and career development resources for students and professionals.
+          </p>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('sdhub-qutubshahi'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EIDDO GLOBAL -->
+      <div class="project-card" (click)="viewProjectDetails('eiddo-global')">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="eiddo-global-logo.png" alt="Eiddo Global">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">EIDDO GLOBAL</h3>
+          <p class="project-category">Global Business Solutions</p>
+          <p class="project-description">
+            Comprehensive business solutions platform providing international consulting, market analysis, and strategic planning services to global enterprises.
+          </p>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('eiddo-global'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EIDDO POWER -->
+      <div class="project-card" (click)="viewProjectDetails('eiddo-power')">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="eiddo-power-logo.png" alt="Eiddo Power">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">EIDDO POWER</h3>
+          <p class="project-category">Energy & Power Solutions</p>
+          <p class="project-description">
+            Specialized platform focusing on renewable energy projects, power system analysis, and sustainable energy consulting services for industrial clients.
+          </p>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('eiddo-power'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIMQUBATOR -->
+      <div class="project-card" (click)="viewProjectDetails('bimqubator')">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="bimqubator-logo.png" alt="BIMQubator">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">BIMQUBATOR</h3>
+          <p class="project-category">BIM & Construction Technology</p>
+          <p class="project-description">
+            Innovative platform specializing in Building Information Modeling (BIM) services, 3D visualization, and construction technology solutions.
+          </p>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('bimqubator'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSF HYDERABAD -->
+      <div class="project-card" (click)="viewProjectDetails('psf-hyderabad')">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="psf-logo.png" alt="PSF Hyderabad">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">PSF HYDERABAD</h3>
+          <p class="project-category">Student Organization Platform</p>
+          <p class="project-description">
+            Comprehensive platform for Pakistan Students Federation facilitating community building, event management, and academic support coordination.
+          </p>
+          <div class="project-buttons">
+            <button class="view-details-button" (click)="viewProjectDetails('psf-hyderabad'); $event.stopPropagation()">
+              View Details
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-</div>
-<div class="projects-page">
-  <div class="container">
-    
-    <!-- Projects Grid -->
-    <div class="projects-grid">
-      
-      <!-- SD HUB QUTUBSHAHI -->
-      <div class="project-card">
-        <div class="project-logo">
-          <div class="logo-container">
-            <div class="logo">
-              <img src="sdhub-qs.jpg" alt="">
-            </div>
-            <div class="tagline">SKILL DEVELOPMENT HUB</div>
-            <div class="icon-row">
-              <div class="icon-circle">
-                <i class="icon">👤</i>
-              </div>
-              <div class="icon-circle">
-                <i class="icon">📞</i>
-              </div>
-              <div class="icon-circle">
-                <i class="icon">⚙️</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-content">
-          <h3 class="project-title">SD HUB QUTUBSHAHI</h3>
-          <p class="project-description">
-            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
-          </p>
-          <button class="visit-button">Visit Website</button>
-        </div>
-      </div>
 
-      <!-- ASEEM INDIA -->
-      <div class="project-card">
-        <div class="project-logo">
-          <div class="logo">
-            <img src="Aseem-logo.png" alt="">
-          </div>
-        </div>
-        
-        <div class="project-content">
-          <h3 class="project-title">ASEEM INDIA</h3>
-          <p class="project-description">
-            We built a dynamic platform for ASEEM India that showcases their advocacy work and community initiatives. The site includes a resource library, donation portal, and volunteer management.
-          </p>
-          <button class="visit-button">Visit Website</button>
-        </div>
-      </div>
-
-      <!-- LAGOM INTERIO -->
-      <div class="project-card">
-        <div class="project-logo">
-          <div class="logo">
-            <div class="lagom-icon">
-                <img src="Lagom-logo.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-content">
-          <h3 class="project-title">LAGOM INTERIO</h3>
-          <p class="project-description">
-            For Lagom Interio, We Built An Elegant Full-Width Interior Design Portfolio With High-Resolution Imagery And Project Details. The Site Features A Clean, Modern Design Perfect For Consultation Requests.
-          </p>
-          <button class="visit-button">Visit Website</button>
-        </div>
-      </div>
-
-      <!-- SD HUB Mehdipatnam -->
-      <div class="project-card">
-        <div class="project-logo">
-          <div class="logo">
-            <img src="sdhub-mp.jpg" alt="">
-            <div class="partner-logos">
-              <div class="partner-badge">AICTE</div>
-              <div class="partner-badge">ISO</div>
-              <div class="partner-badge">MSME</div>
-              <div class="partner-badge">STARTUP</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-content">
-          <h3 class="project-title">SD HUB Mehdipatnam</h3>
-          <p class="project-description">
-            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
-          </p>
-          <button class="visit-button">Visit Website</button>
-        </div>
-      </div>
-
+    <!-- Call to Action -->
+    <div class="projects-cta">
+      <h2>Ready to Start Your Next Project?</h2>
+      <p>Let's discuss how we can help bring your vision to life with our expertise and innovative solutions.</p>
+      <button class="cta-button" routerLink="/consultation">
+        GET STARTED TODAY
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12,5 19,12 12,19"/>
+        </svg>
+      </button>
     </div>
   </div>
 </div>

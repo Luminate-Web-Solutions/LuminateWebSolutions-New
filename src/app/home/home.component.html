@@ -53,3 +53,617 @@
     </div>
   </div>
 </div>
+
+<div class="homepage">
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-content">
+      <p class="header-text">Discover how our web solutions can elevate your digital presence.</p>
+      <div class="header-buttons">
+        <button class="btn btn-inquiry">
+          <i class="icon-inquiry"></i>
+          INQUIRY
+        </button>
+        <button class="btn btn-contact">
+          <i class="icon-contact"></i>
+          CONTACT US
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services-section">
+  <div class="container">
+    <h1 class="section-title">SERVICES</h1>
+    <p class="section-subtitle">See how our solutions grow your business.</p>
+    
+    <div class="service-tabs">
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab === 'development'"
+        (click)="setActiveTab('development')">
+        DEVELOPMENT
+      </button>
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab === 'digital-marketing'"
+        (click)="setActiveTab('digital-marketing')">
+        DIGITAL MARKETING
+      </button>
+    </div>
+
+    <!-- Development Services -->
+    <div class="service-cards" *ngIf="activeTab === 'development'" [@slideIn]>
+      <div class="service-card">
+        <div class="card-icon">
+          <img src="social-media-icon.png" alt="">
+        </div>
+        <div class="card-arrow">→</div>
+        <h3>Social Media Branding</h3>
+        <p>Social media branding builds a unique vibe with bold visuals and a consistent voice.Engage your audience and boost loyalty,</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">
+          <img src="seo-icon.png" alt="">
+        </div>
+        <div class="card-arrow">→</div>
+        <h3>Search Engine Optimization</h3>
+        <p>Helping you build smart, scalable strategies aligned with your vision and market needs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">
+          <img src="wam-icon.png" alt="">
+        </div>
+        <div class="card-arrow">→</div>
+        <h3>WhatsApp Marketing</h3>
+        <p>A fast direct way to connect with customers through messages, updates, offers, and support right on their phones</p>
+      </div>
+    </div>
+
+    <!-- Digital Marketing Services -->
+    <div class="service-cards digital-marketing" *ngIf="activeTab === 'digital-marketing'" [@slideIn]>
+      <div class="service-card" 
+           [class.expanded]="expandedService === 'seo'"
+           (click)="toggleService('seo')">
+        <div class="card-icon">
+          <img src="" alt="">
+        </div>
+        <div class="card-arrow" [class.rotated]="expandedService === 'seo'">
+          {{ expandedService === 'seo' ? '↑' : '→' }}
+        </div>
+        <h3>Search Engine Optimization</h3>
+        <p>Improve your website's visibility in search results and drive organic traffic to your business.</p>
+        
+        <div class="service-details" [@expandCollapse] *ngIf="expandedService === 'seo'">
+          <div class="detail-item">
+            <div class="detail-icon">🎯</div>
+            <div class="detail-content">
+              <h4>Keyword Research</h4>
+              <p>Identify high-value keywords that your target audience is searching for</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">📊</div>
+            <div class="detail-content">
+              <h4>Technical SEO</h4>
+              <p>Optimize your website's technical foundation for better search engine crawling</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">📝</div>
+            <div class="detail-content">
+              <h4>Content Optimization</h4>
+              <p>Create and optimize content that ranks well and engages your audience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card" 
+           [class.expanded]="expandedService === 'social-media'"
+           (click)="toggleService('social-media')">
+        <div class="card-icon">
+          <img src="" alt="">
+        </div>
+        <div class="card-arrow" [class.rotated]="expandedService === 'social-media'">
+          {{ expandedService === 'social-media' ? '↑' : '→' }}
+        </div>
+        <h3>Social Media Marketing</h3>
+        <p>Grow your brand across social platforms and build meaningful connections with your audience.</p>
+        
+        <div class="service-details" [@expandCollapse] *ngIf="expandedService === 'social-media'">
+          <div class="detail-item">
+            <div class="detail-icon">📱</div>
+            <div class="detail-content">
+              <h4>Platform Management</h4>
+              <p>Manage your presence across Facebook, Instagram, LinkedIn, and Twitter</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">🎨</div>
+            <div class="detail-content">
+              <h4>Content Creation</h4>
+              <p>Design engaging posts, stories, and campaigns that resonate with your audience</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">👥</div>
+            <div class="detail-content">
+              <h4>Community Building</h4>
+              <p>Foster engagement and build a loyal community around your brand</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card" 
+           [class.expanded]="expandedService === 'ppc'"
+           (click)="toggleService('ppc')">
+        <div class="card-icon">
+          <img src="" alt="">
+        </div>
+        <div class="card-arrow" [class.rotated]="expandedService === 'ppc'">
+          {{ expandedService === 'ppc' ? '↑' : '→' }}
+        </div>
+        <h3>Pay-Per-Click Advertising</h3>
+        <p>Get immediate traffic through targeted ads and maximize your return on advertising spend.</p>
+        
+        <div class="service-details" [@expandCollapse] *ngIf="expandedService === 'ppc'">
+          <div class="detail-item">
+            <div class="detail-icon">🎯</div>
+            <div class="detail-content">
+              <h4>Google Ads</h4>
+              <p>Create and optimize Google Ads campaigns for maximum visibility and conversions</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">📊</div>
+            <div class="detail-content">
+              <h4>Campaign Analytics</h4>
+              <p>Track performance metrics and optimize campaigns for better ROI</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">💰</div>
+            <div class="detail-content">
+              <h4>Budget Optimization</h4>
+              <p>Maximize your advertising budget with strategic bid management</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="services-cta" [@fadeIn]>
+      <p>Ready to get started with our services?</p>
+      <button class="cta-button" (click)="onGetStarted()">
+        GET STARTED
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12,5 19,12 12,19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- What We Build Section -->
+  <section class="what-we-build">
+    <div class="container">
+      <h2 class="section-title">WHAT WE BUILD <span class="highlight">&#64;Luminate</span></h2>
+      
+      <div class="tech-grid">
+        <div class="tech-item">
+          <img src="figma-icon.png" alt="Figma">
+        </div>
+        <div class="tech-item">
+          <img src="angular-icon.png" alt="Angular">
+        </div>
+        <div class="tech-item">
+          <img src="mongodb-icon.png" alt="MongoDB">
+        </div>
+        <div class="tech-item">
+          <img src="nodejs-icon.png" alt="Node.js">
+        </div>
+        <div class="tech-item">
+          <img src="next-icon.png" alt="Notion">
+        </div>
+        <div class="tech-item">
+          <img src="ts-icon.png" alt="TypeScript">
+        </div>
+        <div class="tech-item">
+          <img src="3dtool-icon.png" alt="3D Tool">
+        </div>
+        <div class="tech-item">
+          <img src="js-icon.png" alt="JavaScript">
+        </div>
+        <div class="tech-item luminate-logo">
+          <img src="logo.png" alt="Luminate">
+        </div>
+        <div class="tech-item">
+          <img src="js-icon.png" alt="JavaScript">
+        </div>
+        <div class="tech-item">
+          <img src="github-icon.png" alt="GitHub">
+        </div>
+        <div class="tech-item">
+          <img src="sql-icon.png" alt="MySQL">
+        </div>
+        <div class="tech-item">
+          <img src="html-icon.png" alt="HTML5">
+        </div>
+        <div class="tech-item">
+          <img src="css-icon.png" alt="CSS3">
+        </div>
+        <div class="tech-item">
+          <img src="bootstrap-icon.png" alt="Bootstrap">
+        </div>
+        <div class="tech-item">
+          <img src="react-icon.png" alt="React">
+        </div>
+        <div class="tech-item">
+          <img src="php-icon.png" alt="PHP">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">CASE STUDIES</h2>
+          <p class="section-subtitle">Our Case Studies Show Our Capability To Provide Complex And Custom Solutions, No Matter The Industry Or Location.</p>
+        </div>
+        <div class="navigation-arrows">
+          <!-- <button class="nav-arrow prev">←</button>
+          <button class="nav-arrow next">→</button> -->
+        </div>
+      </div>
+
+      <div class="case-study-cards">
+        <div class="case-study-card">
+          <div class="card-image">
+            <img src="case-studies.png" alt="Healthcare Data Integration">
+          </div>
+          <div class="card-content">
+            <h3>Scalable Healthcare Data Integration for the Beats Screening Module</h3>
+            <p>The cutting-edge software solution was specifically designed to revolutionize the collection and analysis of heart rate data for medical devices in the healthcare industry.</p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+        </div>
+
+        <div class="case-study-card">
+          <div class="card-image">
+            <img src="slider.png" alt="Healthcare Data Integration">
+          </div>
+          <div class="card-content">
+            <h3>Scalable Healthcare Data Integration for the Beats Screening Module</h3>
+            <p>The cutting-edge software solution was specifically designed to revolutionize the collection and analysis of heart rate data for medical devices in the healthcare industry.</p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Want to learn more about our Web services?</h2>
+      <button class="cta-btn">LET'S TALK →</button>
+    </div>
+  </div>
+</section>
+
+  <!-- Our Projects Section -->
+  <section class="our-projects">
+    <div class="container">
+      <h2 class="section-title">OUR PROJECTS</h2>
+      <p class="section-subtitle">See how we've delivered best results to our clients</p>
+
+      <div class="projects-page">
+  <div class="container">
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      
+      <!-- SD HUB QUTUBSHAHI -->
+      <div class="project-card">
+        <div class="project-logo">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="sdhub-qs.jpg" alt="">
+            </div>
+            <div class="tagline">SKILL DEVELOPMENT HUB</div>
+            <div class="icon-row">
+              <div class="icon-circle">
+                <i class="icon">👤</i>
+              </div>
+              <div class="icon-circle">
+                <i class="icon">📞</i>
+              </div>
+              <div class="icon-circle">
+                <i class="icon">⚙️</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">SD HUB QUTUBSHAHI</h3>
+          <p class="project-description">
+            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
+          </p>
+          <button class="visit-button" routerLink="/projects">View Details</button>
+        </div>
+      </div>
+
+      <!-- ASEEM INDIA -->
+      <div class="project-card">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="Aseem-logo.png" alt="">
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">ASEEM INDIA</h3>
+          <p class="project-description">
+            We built a dynamic platform for ASEEM India that showcases their advocacy work and community initiatives. The site includes a resource library, donation portal, and volunteer management.
+          </p>
+          <button class="visit-button" routerLink="/projects">View Details</button>
+        </div>
+      </div>
+
+      <!-- LAGOM INTERIO -->
+      <div class="project-card">
+        <div class="project-logo">
+          <div class="logo">
+            <div class="lagom-icon">
+                <img src="Lagom-logo.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">LAGOM INTERIO</h3>
+          <p class="project-description">
+            For Lagom Interio, We Built An Elegant Full-Width Interior Design Portfolio With High-Resolution Imagery And Project Details. The Site Features A Clean, Modern Design Perfect For Consultation Requests.
+          </p>
+          <button class="visit-button" routerLink="/projects">View Details</button>
+        </div>
+      </div>
+
+      <!-- SD HUB Mehdipatnam -->
+      <div class="project-card">
+        <div class="project-logo">
+          <div class="logo">
+            <img src="sdhub-mp.jpg" alt="">
+            <div class="partner-logos">
+              <div class="partner-badge">AICTE</div>
+              <div class="partner-badge">ISO</div>
+              <div class="partner-badge">MSME</div>
+              <div class="partner-badge">STARTUP</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">SD HUB Mehdipatnam</h3>
+          <p class="project-description">
+            For SD Hub Qutubshahi, we created a custom website with an integrated course management system, online application process, and mobile-friendly interface.
+          </p>
+          <button class="visit-button" routerLink="/projects">View Details</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <div class="more-projects">
+        <button class="more-projects-btn">MORE PROJECTS →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Banner -->
+  <section class="services-banner">
+    <div class="services-scroll">
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+    </div>
+  </section>
+  <section class="services-banner">
+    <div class="services-scroll-2">
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+      <div class="service-tag">Brand Identity</div>
+      <div class="service-tag">Social Media Management</div>
+      <div class="service-tag">SEO & SEM</div>
+      <div class="service-tag">Content Marketing</div>
+      <div class="service-tag">UI/UX Design</div>
+      <div class="service-tag">Web Development</div>
+      <div class="service-tag">Performance Marketing</div>
+      <div class="service-tag">CRM Integration</div>
+      <div class="service-tag">Digital Strategy</div>
+      <div class="service-tag">Analytics & Insights</div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">TESTIMONIALS</h2>
+      <p class="section-subtitle">See how we've delivered best results to our clients</p>
+
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">I am impressed with their dedicated team of professionals who are knowledgeable, responsive & customer oriented. Looking forward to working together with them!</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <div class="author-name">Md Zaheed Ali</div>
+              <div class="author-title">Strategy Director</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">I am impressed with their dedicated team of professionals who are knowledgeable, responsive & customer oriented. Looking forward to working together with them!</p>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <div class="author-name">Md Zaheed Ali</div>
+              <div class="author-title">Strategy Director</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Section -->
+  <!-- <section class="development-section">
+    <div class="container">
+      <div class="development-content">
+        <div class="development-left">
+          <div class="development-tag">DEVELOPMENT</div>
+          <h2>Delivering Purpose-Driven, High-Performance Websites.</h2>
+          
+          <div class="development-card">
+            <h3>Web Development</h3>
+            <p>Our Expertise Lies In Building Impactful Websites That Go Beyond Visual Appeal. We Design Intuitive, Responsive Platforms That Deliver Seamless User Experiences And Drive Meaningful Engagement.</p>
+            
+            <div class="development-features">
+              <div class="feature">✓ Discovery & Planning</div>
+              <div class="feature">✓ Design & Prototyping</div>
+              <div class="feature">✓ Development</div>
+              <div class="feature">✓ Testing & Launch</div>
+            </div>
+            
+            <button class="read-more-btn">READ MORE →</button>
+            
+            <div class="development-icon">
+              <img src="code-icon.svg" alt="Development">
+            </div>
+          </div>
+        </div>
+
+        <div class="development-right">
+          <div class="service-list">
+            <div class="service-item">
+              <div class="service-icon">
+                <img src="web-dev-icon.svg" alt="Web Development">
+              </div>
+              <span>WEB DEVELOPMENT</span>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">
+                <img src="mobile-dev-icon.svg" alt="Mobile Development">
+              </div>
+              <span>APP MOBILE DEVELOPMENT</span>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">
+                <img src="erp-icon.svg" alt="ERP Development">
+              </div>
+              <span>ERP SOFTWARE DEVELOPMENT</span>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">
+                <img src="cloud-icon.svg" alt="Cloud Solutions">
+              </div>
+              <span>CLOUD SOLUTIONS</span>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">
+                <img src="cloud-alt-icon.svg" alt="Cloud Solutions">
+              </div>
+              <span>CLOUD SOLUTIONS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Blogs Section -->
+  <app-blogs-section></app-blogs-section>

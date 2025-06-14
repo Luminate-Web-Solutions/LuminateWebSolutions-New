@@ -1,0 +1,123 @@
+<div class="project-detail-page" *ngIf="project">
+  <!-- Hero Section -->
+  <div class="project-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <button class="back-button" (click)="goBack()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="19" y1="12" x2="5" y2="12"/>
+          <polyline points="12,19 5,12 12,5"/>
+        </svg>
+        Back to Projects
+      </button>
+      <h1 class="project-title">{{ project.title }}</h1>
+      <p class="project-category">{{ project.category }}</p>
+      <div class="project-meta">
+        <span class="meta-item">
+          <strong>Client:</strong> {{ project.client }}
+        </span>
+        <span class="meta-item">
+          <strong>Duration:</strong> {{ project.duration }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Content -->
+  <div class="project-content">
+    <div class="container">
+      
+      <!-- Project Overview -->
+      <section class="content-section">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-text">{{ project.description }}</p>
+      </section>
+
+      <!-- Technologies Used -->
+      <section class="content-section">
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-tags">
+          <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+      </section>
+
+      <!-- Challenge -->
+      <section class="content-section">
+        <h2 class="section-title">The Challenge</h2>
+        <p class="section-text">{{ project.challenge }}</p>
+      </section>
+
+      <!-- Solution -->
+      <section class="content-section">
+        <h2 class="section-title">Our Solution</h2>
+        <p class="section-text">{{ project.solution }}</p>
+      </section>
+
+      <!-- Key Features -->
+      <section class="content-section">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-item" *ngFor="let feature of project.features">
+            <div class="feature-icon">✓</div>
+            <span class="feature-text">{{ feature }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="content-section">
+        <h2 class="section-title">Results & Impact</h2>
+        <div class="results-grid">
+          <div class="result-item" *ngFor="let result of project.results">
+            <div class="result-icon">📈</div>
+            <span class="result-text">{{ result }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Images -->
+      <section class="content-section" *ngIf="project.images && project.images.length > 0">
+        <h2 class="section-title">Project Gallery</h2>
+        <div class="image-gallery">
+          <div class="gallery-item" *ngFor="let image of project.images">
+            <img [src]="image" [alt]="project.title + ' screenshot'" (click)="openImageModal(image)">
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <section class="content-section testimonial-section" *ngIf="project.testimonial">
+        <h2 class="section-title">Client Testimonial</h2>
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">{{ project.testimonial.text }}</p>
+          <div class="testimonial-author">
+            <strong>{{ project.testimonial.author }}</strong>
+            <span>{{ project.testimonial.position }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="content-section cta-section">
+        <div class="cta-card">
+          <h2>Ready to Start Your Project?</h2>
+          <p>Let's discuss how we can help bring your vision to life with our expertise and innovative solutions.</p>
+          <div class="cta-buttons">
+            <button class="cta-button primary" (click)="contactUs()">Get Started</button>
+            <button class="cta-button secondary" (click)="viewMoreProjects()">View More Projects</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Image Modal -->
+<div class="image-modal" *ngIf="selectedImage" (click)="closeImageModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeImageModal()">×</button>
+    <img [src]="selectedImage" alt="Project screenshot">
+  </div>
+</div>
